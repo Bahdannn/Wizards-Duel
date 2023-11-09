@@ -8,8 +8,27 @@ public class BluePlayer : MonoBehaviour
     
     [SerializeField] private float speed = 3f;
     [SerializeField] private float rotateSpeed = 3f;
+    [SerializeField] private Transform ballSpawn;
+    [SerializeField] private GameObject ball;
+    
+    private float TimeBtwShot;
+    public float StartTimeBtwShot;
 
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightShift) && TimeBtwShot <= 0)
+        {
+            Instantiate(ball, ballSpawn.position, transform.rotation);
+            TimeBtwShot = StartTimeBtwShot;
+
+        }
+        
+        if (TimeBtwShot > 0)
+        {
+            TimeBtwShot -= Time.deltaTime;
+        }
+    }
     
     void FixedUpdate()
     {
@@ -42,10 +61,7 @@ public class BluePlayer : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        
-    }
+    
 
     private void Move()
     {
