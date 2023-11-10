@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D _rb;
+    public int destroyTimer = 0;
 
     private void Awake()
     {
@@ -18,10 +19,16 @@ public class Ball : MonoBehaviour
     {
         
         _rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
+        Invoke("DestroyBall", 7f);
     }
     
     void Update()
     {
-        //transform.Translate(Vector2.up * speed * Time.deltaTime);
+        
+    }
+
+    private void DestroyBall()
+    {
+        Destroy(this.gameObject);
     }
 }
