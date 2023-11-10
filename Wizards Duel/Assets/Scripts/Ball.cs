@@ -19,7 +19,7 @@ public class Ball : MonoBehaviour
     {
         
         _rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
-        Invoke("DestroyBall", 7f);
+        Invoke("DestroyBall", 6f);
     }
     
     void Update()
