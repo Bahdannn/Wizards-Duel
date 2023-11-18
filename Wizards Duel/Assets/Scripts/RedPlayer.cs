@@ -14,7 +14,6 @@ public class RedPlayer : MonoBehaviour
     private float TimeBtwShot;
     public float StartTimeBtwShot;
 
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.C) && TimeBtwShot <= 0)

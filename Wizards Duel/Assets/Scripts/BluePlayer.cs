@@ -10,10 +10,9 @@ public class BluePlayer : MonoBehaviour
     [SerializeField] private float rotateSpeed = 3f;
     [SerializeField] private Transform ballSpawn;
     [SerializeField] private GameObject ball;
-    
+
     private float TimeBtwShot;
     public float StartTimeBtwShot;
-
 
     private void Update()
     {
@@ -28,6 +27,7 @@ public class BluePlayer : MonoBehaviour
         {
             TimeBtwShot -= Time.deltaTime;
         }
+        
     }
     
     void FixedUpdate()
