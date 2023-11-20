@@ -9,7 +9,7 @@ public class SceneChanger : MonoBehaviour
 {
     public int sceneNumber;
 
-    private void ExitGame()
+    public void ExitGame()
     {
         Application.Quit();
     }

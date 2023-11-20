@@ -10,6 +10,9 @@ public class Ball : MonoBehaviour
     public float speed;
     private Rigidbody2D _rb;
     public int destroyTimer = 0;
+    public GameObject RedPanel;
+    public GameObject BluePanel;
+
 
     private void Awake()
     {
@@ -32,6 +35,20 @@ public class Ball : MonoBehaviour
     private void DestroyBall()
     {
         Destroy(this.gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+
+        if (col.collider.CompareTag("Red Player"))
+        {
+            SceneManager.LoadScene(4);
+        }
+        
+        if (col.collider.CompareTag("Blue Player"))
+        {
+            SceneManager.LoadScene(3);
+        }
     }
     
 }
